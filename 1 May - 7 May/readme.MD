@@ -1,4 +1,4 @@
-P1_4:
+## P1_4:
 
 **Problems**. Write in the command line the command to:
 
@@ -6,7 +6,7 @@ P1_4:
 2. Display the line number of each line containing the string "character." at the end of line. Then, display the number of lines corresponding to that criteria, using the `wc` command.
 3. Display the line number of each line containing numbers of two digits. Then, display the number of lines corresponding to that criteria, using the `wc` command.
 
-P2_2 :
+## P2_2 :
 
 **Problem**. Write a shell script named "ls_param.sh" that displays on the screen every N-th parameter from its command line, in the order they were specified. N is given as its first command line parameter. You may use `eval` command. You can begin with the case N=1. Deal with the following cases:
 
@@ -20,7 +20,7 @@ p1 p2 p3 p4 p5
 ls_param.sh 2 p1 p2 p3 p4 p5
 p2 p4"
 
-P3:
+## P3:
 
 **Problem**. Write a shell script, which is given (at execution) as a command line parameter the path to a directory and performs the following actions:
 
