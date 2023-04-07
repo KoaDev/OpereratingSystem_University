@@ -1,0 +1,20 @@
+1. **Searching files** (Estimated time 30 min). Write a C program to search for a name in a file tree having as root a specified directory. Both the name and starting directory are specified in the command line of your program. The program must perform the following steps:
+   - Checks if the required number of parameters were specified or not. If it was, then displays them, if not, displays an error message and terminates.
+   - Checks if the parameter that should correspond to a directory is indeed a directory or not. If it is, continues its execution, if not terminates.
+   - Calls a function "int search_dir(char *dir_name, char *searched_name)" to check if there is an element with the searched name in the given directory (not entering subdirectories). If such an element exists, then its absolute path and type (file, directory, symbolic link) must be displayed on the screen.
+   - Calls a recursive function "int search_tree(char *dir_name, char *searched_name)" to search for a given name in the entire tree having the given directory as root. The function search_tree should use function search_dir.
+   - If the found element corresponds to a file, calls another function "int copy_file(char *src, char *dst)" that copies the found file in another directory, under the same name, but ended with ".n" extension (n is the n-th occurrence of that name). The destination directory should be also specified as a command line parameter. Adapt the functions required at points 1 and 2 to also consider this new parameter. For an example of copying a file see this program: copy-file.c.
+   - If the found path corresponds to a directory, calls another "int copy_dir(char *src, char *dst)" function that copies that directory in another directory, under the same name, but ended with ".n" extension (n is the n-th occurrence of that name). The destination directory is the same one as that at point 5.
+
+2. **Delete a directory** (Estimated time 30 min). Write a C program that receives a file path as command line parameter and performs the following steps:
+   - Checks if the required number of parameters were specified or not. If it was, then displays them, if not, displays an error message and terminates.
+   - Checks if the specified parameter is a directory path or not. If it is, continues its execution, if not terminates.
+   - Calls a function "int remove_files_in_dir(char *dir_path)" to remove all the files in the given directory. NOTE: removing a file can be done using the "unlink" system call.
+   - Calls another recursive function "int remove_file_tree(char *dir_path)" to traverse the entire file tree having as root the given directory and at each level (directory) remove all the elements (i.e. files and subdirectories) in that directory calling the remove_files_in_dir function. NOTE: removing a directory can be done using the "rmdir" system call and works only for empty directories.
+
+3. **Calculate the allocated space** (Estimated time 30 min). Write a C program that receives as a command line parameter the path to a directory and performs the following steps:
+   - Checks if the required number of parameters were specified or not. If it was, then displays them, if not, displays an error message and terminates.
+   - Checks if the specified parameter is a directory path or not. If it is, continues its execution, if not terminates.
+   - Calls a function "int total_file_size(char *dir_path)" to calculate the size in bytes and blocks (see the corresponding fields of the "struct stat structure" of all the files in the given directory.
+   - Calls another recursive function "int total_file_tree_size(char *dir_path)" to traverse the entire file tree having as root the given directory and calculate at each sub-directory level, calling the total_file_size function, the total size in bytes and blocks of all the files in that sub-directory.
+   - Compare the obtained results with those returned by the command "du -s -h dir_path" and "du -h dir_path" (the command's name "du" stands for "disk usage").
