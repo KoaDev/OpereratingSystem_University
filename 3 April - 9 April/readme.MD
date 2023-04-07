@@ -20,7 +20,7 @@ switch (pid) {
     // parent
     // ... does what it is requested ...
 }
-
+```
 
 
 
@@ -71,6 +71,7 @@ int main(int argc, char **argv)
       break;
   }
 }
+```
 Let it create the number of processes created by the given code. 
 Displays on the screen just ONE time the number of processes created by the given code, including the parent process, i.e. the process starting the execution of the main function.
 You are not allowed to use any mathematical formula to display the required number, but only let the created process communicate in some way to get that number.  
